@@ -56,7 +56,7 @@ execute -> function(connectionDetails,
     ParallelLogger::logInfo("Load ADI data")
     print(paste0("package: ", package))
     ParallelLogger::logInfo("Loading ADI Data")
-    pathToCsv <- system.file("settings", "US_2020_ADI_Census_Block\ Group_3.2.csv", package = package)
+    pathToCsv <- system.file("settings", "US_2020_ADI_Census_Block_Group_3.2.csv", package = package)
     createAndLoadFileToTable(pathToCsv,
                              sep = ",",
                              connection,
