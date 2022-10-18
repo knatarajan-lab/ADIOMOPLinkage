@@ -1,3 +1,4 @@
+# @file ADICohortBuild.R
 # Copyright 2022 Observational Health Data Sciences and Informatics
 #
 # This file is part of ADIOMOPLinkage
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#' @title ADICohortBuild
 #' @details
 #' Run the patient count and median ADI for each County
 #'
@@ -54,8 +56,6 @@
 #' --------------------------------------------------------------------------------------------------------------------------------------
 #'
 #' @export
-#'
-
 #Run the patient count and median ADI for each County. Any value less than minCellCount limit will be returned as a label.
 ADICohortBuild <- function(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable, outputFolder, minCellCount=10){
   ParallelLogger::logInfo(paste("Extracting Geometry and ADI Data"))
