@@ -58,7 +58,6 @@ execute(connectionDetails,
         geocodedLocation = TRUE,
         geocodedLocationTable,
         createViz = TRUE,
-        #renderMarkdown = TRUE,
         maxCores = maxCores,
         minCellCount = minCellCount)
 

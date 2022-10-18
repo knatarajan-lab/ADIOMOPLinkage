@@ -1,3 +1,4 @@
+# @file CreateAndLoadFileToTalbe.R
 # Copyright 2022 Observational Health Data Sciences and Informatics
 #
 # This file is part of ADIOMOPLinkage
@@ -15,6 +16,7 @@
 # limitations under the License.
 
 
+#' @title CreateAndLoadFileToTable
 #' Execute the package to load ADI into the cohort database and link data with your cohort result
 #'
 #' @param connectionDetails    An object of type \code{connectionDetails} as created using the
@@ -30,7 +32,7 @@
 #'                             which will be linked with ADI data.
 #' @param oracleTempSchema     Should be used in Oracle to specify a schema where the user has write
 #'                             priviliges for storing temporary tables.
-
+#' @export
 createAndLoadFileToTable <- function(pathToCsv,
                                      sep = ",",
                                      connection,

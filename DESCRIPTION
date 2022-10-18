@@ -10,6 +10,4 @@ Description: The package is to build a generic process to link ADI (Area Depriva
 License: Apache License, Version 2.0 (the "License")
 Encoding: UTF-8
 LazyData: true
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+RoxygenNote: 7.2.1

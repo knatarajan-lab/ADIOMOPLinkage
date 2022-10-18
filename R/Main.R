@@ -1,3 +1,4 @@
+# @file Main.R
 # Copyright 2022 Observational Health Data Sciences and Informatics
 #
 # This file is part of ADIOMOPLinkage
@@ -14,8 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-#' Execute the package to load ADI into the cohort database and link data with your cohort result
+#' @title Main
+#' @details
+#' This function executes the ADIOMOPLinkage Study. Execute the package to load ADI into the cohort database and link data with your cohort result
 #'
 #' @param connectionDetails    An object of type \code{connectionDetails} as created using the
 #'                             \code{\link[DatabaseConnector]{createConnectionDetails}} function in the
@@ -28,6 +30,8 @@
 #'                             include both the database and schema name, for example 'cdm_data.dbo'.
 #' @param cohortTable          The name of the table that hold the cohorts created from previous studies.
 #'                             which will be linked with ADI data.
+#' @param oracleTempSchema     Should be used in Oracle to specify a schema where the user has write
+#'                             priviliges for storing temporary tables.
 #' @param outputFolder         Name of local folder to place results; make sure to use forward slashes
 #'                             (/). Do not use a folder on a network drive since this greatly impacts
 #'                             performance.
@@ -37,8 +41,10 @@
 #' @param createViz            Generate map visualizations through package?
 #' @param minCellCount         The minimum number of subjects contributing to a count before it can be shown
 #'                             on the maps.
-
-execute -> function(connectionDetails,
+#'
+#' @export
+#'
+execute <- function(connectionDetails,
                     cdmDatabaseSchema,
                     cohortDatabaseSchema,
                     cohortTable,
@@ -54,9 +60,9 @@ execute -> function(connectionDetails,
   #create table for hosting ADI
   if (loadADI) {
     ParallelLogger::logInfo("Load ADI data")
-    print(paste0("package: ", package))
+    #print(paste0("package: ", package))
     ParallelLogger::logInfo("Loading ADI Data")
-    pathToCsv <- system.file("settings", "US_2020_ADI_Census_Block_Group_3.2.csv", package = package)
+    pathToCsv <- system.file("settings", "US_2020_ADI_Census_Block_Group_v3.2.csv", package = package)
     createAndLoadFileToTable(pathToCsv,
                              sep = ",",
                              connection,
@@ -66,12 +72,8 @@ execute -> function(connectionDetails,
                              targetDialect = attr(connection, "dbms"),
                              oracleTempSchema,
                              package)
-  if (geocodedLocation) {
-    ADICohortBuild(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable, outputFolder, minCellCount)
-#  if (creatViz) {
-
-#  }
+    if (geocodedLocation) {
+      ADICohortBuild(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable, outputFolder, minCellCount)
+    }
   }
-  }
-
 }
