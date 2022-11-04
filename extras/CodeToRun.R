@@ -36,11 +36,11 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(
 
 
 # Details specific to the database:
-db <- "ohdsi_cumc_2021q2r1"
+db <- "2021q2r1"
 cdmDatabaseSchema <- paste0(db,".dbo") # schema for your CDM instance -- e.g. full_201911_omop_v5
 resultsDatabaseSchema <- paste0(db,".results") # schema with write privileges
 vocabularyDatabaseSchema <- paste0(db,".dbo") #schema where your CDM vocabulary is located
-geo_db <- "ohdsi_cumc_2022q2r1"
+geo_db <- "2022q2r1"
 geocodedLocationSchema <- paste0(geo_db, ".dbo")
 cohortTable <- "cancer_cohorts"
 cohortDatabaseSchema <- paste0(db,".results")
