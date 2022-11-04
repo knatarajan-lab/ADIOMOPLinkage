@@ -16,11 +16,17 @@
 # limitations under the License.
 
 
-#' Execute the package to load ADI into the cohort database and link data with your cohort result
-#'
-#' @param outputFolder         Name of local folder to place results; make sure to use forward slashes
-#'                             (/). Do not use a folder on a network drive since this greatly impacts
-#'                             performance.
-#' @param minCellCount         The minimum number of subjects contributing to a count before it can be shown
-#'                             on the maps.
+CreateViz <- function(median_adi_data,
+                      county_level_agg,
+                      ADI_RANK_LEVEL){
+  if(county_level_agg){
+    county_data <- tigris::counties(cb = TRUE)
+    data <- sf::st_join(county_data, median_adi_data, left = TRUE)
+  }
+  mapview::mapview(data,
+                   zcol = "MEDIAN_ADI_RANK",
+                   layer.name = paste0("MEDIAN_", ADI_RANK_LEVEL)
+                   )
+
+}
 
