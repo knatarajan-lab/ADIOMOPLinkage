@@ -131,7 +131,11 @@ Please feel free to create an issue in the github page and the author will respo
 
 ## Reference
 
-1.Kind AJH, Buckingham W. Making Neighborhood Disadvantage Metrics Accessible: The Neighborhood Atlas. New England Journal of Medicine, 2018. 378: 2456-2458. DOI: 10.1056/NEJMp1802313. PMCID: PMC6051533. 2.University of Wisconsin School of Medicine and Public Health. {2020} Area Deprivation Index {v3.2}. Downloaded from <https://www.neighborhoodatlas.medicine.wisc.edu/> Nov 4, 2022 3. <https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html>
+1.Kind AJH, Buckingham W. Making Neighborhood Disadvantage Metrics Accessible: The Neighborhood Atlas. New England Journal of Medicine, 2018. 378: 2456-2458. DOI: 10.1056/NEJMp1802313. PMCID: PMC6051533.
+
+2.University of Wisconsin School of Medicine and Public Health. {2020} Area Deprivation Index {v3.2}. Downloaded from <https://www.neighborhoodatlas.medicine.wisc.edu/> Nov 4, 2022
+
+3\. <https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html>
 
 ## License
 
