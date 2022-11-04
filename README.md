@@ -24,7 +24,7 @@ ADIOMOPLinkage is an R package for building the linkage between Area Deprivation
 
 1.  Install and load the package dependencies in `R`
 
-    ```{r}
+    ``` r
     install.packages("devtools")
     library(devtools)
     install_github("ohdsi/SqlRender")
@@ -50,21 +50,21 @@ ADIOMOPLinkage is an R package for building the linkage between Area Deprivation
 
 2.  Download the database jdbc driver
 
-    ```{r}
+    ``` r
     Sys.setenv("DATABASECONNECTOR_JAR_FOLDER" = "c:/temp/jdbcDrivers")
     DatabaseConnector::downloadJdbcDrivers("sql server")
     ```
 
 3.  Use `devtools` to install and load OMOPADILinkage package
 
-    ```{r}
+    ``` r
     devtools::install_github("https://github.com/xj2193/ADIOMOPLinkage.git")
     library(ADIOMOPLinkage)
     ```
 
 4.  Execute the study by tailoring the code and modifying the parameters
 
-    ```{r}
+    ``` r
     # absolute path to this study
     path <- '' 
 
@@ -120,7 +120,6 @@ ADIOMOPLinkage is an R package for building the linkage between Area Deprivation
     CreateViz(median_adi_data,
               county_level_agg = TRUE,
               ADI_RANK_LEVEL = ADI_RANK_LEVEL)
-
     ```
 
 5.  The map visualization will show up in the Viewer tab
