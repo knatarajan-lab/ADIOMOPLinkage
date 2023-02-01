@@ -58,7 +58,7 @@ ADIOMOPLinkage is an R package for building the linkage between Area Deprivation
 3.  Use `devtools` to install and load OMOPADILinkage package
 
     ``` r
-    devtools::install_github("https://github.com/xj2193/ADIOMOPLinkage.git")
+    devtools::install_github("https://github.com/knatarajan-lab/ADIOMOPLinkage.git")
     library(ADIOMOPLinkage)
     ```
 
